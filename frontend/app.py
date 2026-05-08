@@ -8,9 +8,14 @@ hours = st.slider("Study Hours", 0, 12)
 if st.button("Predict"):
 
     response = requests.get(
-        f"https://fastapi-backend.onrender.com/predict?hours={hours}"
+        f"YOUR_RENDER_BACKEND_URL/predict?hours={hours}"
     )
 
-    result = response.json()["result"]
+    data = response.json()
 
-    st.success(f"Prediction: {result}")
+    st.write(data)
+
+    if "result" in data:
+        st.success(f"Prediction: {data['result']}")
+    else:
+        st.error("Result key not found")
