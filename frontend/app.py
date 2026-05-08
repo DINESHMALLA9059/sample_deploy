@@ -8,7 +8,7 @@ hours = st.slider("Study Hours", 0, 12)
 if st.button("Predict"):
 
     response = requests.get(
-        f"YOUR_RENDER_BACKEND_URL/predict?hours={hours}"
+        f"https://sample-deploy-x69u.onrender.com/predict?hours={hours}"
     )
 
     data = response.json()
