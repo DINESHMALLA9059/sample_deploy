@@ -8,7 +8,7 @@ hours = st.slider("Study Hours", 0, 12)
 if st.button("Predict"):
 
     response = requests.get(
-        f"http://127.0.0.1:8000/predict?hours={hours}"
+        f"https://fastapi-backend.onrender.com/predict?hours={hours}"
     )
 
     result = response.json()["result"]
